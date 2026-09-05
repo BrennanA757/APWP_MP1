@@ -73,17 +73,17 @@ if __name__ == "__main__":
 
     client = PracticeHubClient(BASE, TOKEN)
 
-    #everyone = client.list_posts()
-    #print(f"posts on the hub: {len(everyone)}")
+    new_post = client.create_post("Test Post", "test")
+    if(new_post != None):
+        post_id = new_post["id"]
+        post = client.get_post(post_id)
+        print(f"Successfully created post {post}")
 
-    #new_post = client.create_post("Week 3 lab", body="My first created post.")
-    #print(f"created post {new_post['id']}: {new_post['title']}")
+        client.update_post(post_id, "updated text")
+        post = client.get_post(post_id)
+        print(f"Successfully updated post {post}")
 
-    #print(f"posts that are mine: {len(client.list_posts(mine=True))}")
+        client.delete_post(post_id)
+        print("Deleted newly created post")
 
-    post_id = 9
-
-    print(f"Created Post: {client.create_post(post_id,"test")}")
-    print(f"Updated Post: {client.update_post(post_id,"edit")}")
-    client.delete_post(post_id)
-    client.delete_post(post_id)
+    
