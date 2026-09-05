@@ -1,5 +1,5 @@
 ### INF601 - Advanced Programming in Python
-### Jane Doe
+### Brennan Adams
 ### Mini Project 1
  
  
@@ -76,3 +76,7 @@ No License
 ## Acknowledgments
  
 None
+
+## AI Usage
+
+I used AI to help write and understand the update, get, and delete functions for posts. It also helped a little bit with the status_check function.
